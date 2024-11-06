@@ -104,26 +104,39 @@
         <div class="container">
             <label for="object">Scegli un oggetto:</label>
             <select id="object">
-                <option value="benda">Benda</option>
-                <option value="sutura">Sutura</option>
-                <option value="penicillina">Penicillina</option>
-                <option value="unguento">Unguento</option>
-                <option value="collaDiPesce">Colla Di Pesce</option>
-                <option value="cotoneEmostatico">Cotone Emostatico</option>
-                <option value="ossicodone">Ossicodone</option>
-                <option value="antidolorificoNaturale">Antidolorifico Naturale</option>
-                <option value="antidolorifico">Antidolorifico</option>
-                <option value="kitPrimoSoccorso">Kit Primo Soccorso</option>
-                <option value="sigarettaDrum">Sigaretta Drum</option>
-                <option value="jointEphedra">Joint Ephedra</option>
-                <option value="tisana">Tisana</option>
-                <option value="fitoregulatori">Fitoregulatori</option>
-                <option value="cassaDaParamedico">Cassa Da Paramedico</option>
-                <option value="polvereDiDMT">Polvere Di DMT</option>
-                <option value="jointMarijuana">Joint Marijuana</option>
-                <option value="lettinoMedico">Lettino Medico</option>
-                <option value="morfina">Morfina</option>
-                <option value="iniettorePNB">Iniettore PNB</option>
+                <option value="baseInLegno">Base in Legno</option>
+                <option value="tessuto">Tessuto</option>
+                <option value="cassaInLegno">Cassa in Legno</option>
+                <option value="pareteInLegno">Parete in Legno</option>
+                <option value="telaioPortaInLegno">Telaio Porta in Legno</option>
+                <option value="fornace">Fornace</option>
+                <option value="portaInLegno">Porta in Legno</option>
+                <option value="pilastroInLegno">Pilastro in Legno</option>
+                <option value="scalaPioliInLegno">Scala a Pioli in Legno</option>
+                <option value="tavoloLavoroL1">Tavolo da Lavoro L1</option>
+                <option value="scalaInLegno">Scala in Legno</option>
+                <option value="soffittoInLegno">Soffitto in Legno</option>
+                <option value="cassaGrandeInLegno">Cassa Grande in Legno</option>
+                <option value="paretePiccolaInLegno">Parete Piccola in Legno</option>
+                <option value="cancelloInLegno">Cancello in Legno</option>
+                <option value="telaioCancelloInLegno">Telaio Cancello in Legno</option>
+                <option value="telaioFinestraInLegno">Telaio Finestra in Legno</option>
+                <option value="finestraInLegno">Finestra in Legno</option>
+                <option value="pareteGrandeInLegno">Parete Grande in Legno</option>
+                <option value="telaioCancelloGrandeInLegno">Telaio Cancello Grande in Legno</option>
+                <option value="cancelloGrandeInLegno">Cancello Grande in Legno</option>
+                <option value="tavoloLavoroL2">Tavolo da Lavoro L2</option>
+                <option value="tavoloDaRiparazione">Tavolo da Riparazione</option>
+                <option value="baseInMetallo">Base in Metallo</option>
+                <option value="pareteInMetallo">Parete in Metallo</option>
+                <option value="scalaPioliInMetallo">Scala a Pioli in Metallo</option>
+                <option value="portaInMetallo">Porta in Metallo</option>
+                <option value="baseTriangolareInLegno">Base Triangolare in Legno</option>
+                <option value="soffittoTriangolareInLegno">Soffitto Triangolare in Legno</option>
+                <option value="zainoMedio">Zaino Medio</option>
+                <option value="baseTriangolareInPietra">Base Triangolare in Pietra</option>
+                <option value="soffittoTriangolareInPietra">Soffitto Triangolare in Pietra</option>
+                <option value="tavoloLavoroL3">Tavolo da Lavoro L3</option>
             </select>
             <label for="quantity">Quantità:</label>
             <input type="number" id="quantity" min="1" value="1">
@@ -144,26 +157,39 @@
 
     <script>
         const materialiPerOggetto = {
-            benda: { disinfettante: 1, straccio: 1 },
-            sutura: { filo: 1, ago: 1 },
-            penicillina: { lattePastorizzato: 1, fungo: 2 },
-            unguento: { pestello: 1, limone: 1, papavero: 2, ephedra: 2 },
-            collaDiPesce: { pesceCrudo: 1 },
-            cotoneEmostatico: { disinfettante: 0.9, papavero: 3, cotone: 3, ephedra: 3 },
-            ossicodone: { compressa: 1, papavero: 5 },
-            antidolorificoNaturale: { erbaAromatica: 1, zenzero: 1 },
-            antidolorifico: { aspirina: 1, compressa: 1 },
-            kitPrimoSoccorso: { disinfettante: 0.9, cotoneEmostatico: 1, benda: 2 },
-            sigarettaDrum: { cartinaArrotolare: 1, tabaccoEssiccato: 2 },
-            jointEphedra: { cartinaArrotolare: 1, tabaccoEssiccato: 3, ephedra: 3 },
-            tisana: { bottigliaAcqua: 1, mela: 2, erbaAromatica: 2 },
-            fitoregulatori: { ephedra: 1, acqua: 2, papavero: 2 },
-            cassaDaParamedico: { ago: 3, filo: 1, cassettaAttrezzi: 1, benda: 2, kitPrimoSoccorso: 1 },
-            polvereDiDMT: { cristalloDMT: 5 },
-            jointMarijuana: { cartinaArrotolare: 1, tabaccoEssiccato: 3, marijuana: 10 },
-            lettinoMedico: { nastroAdesivo: 8, legno: 12, cotone: 12, filo: 15 },
-            morfina: { iniettoreVuoto: 1, alprazolam: 1, morfinaGrezza: 7 },
-            iniettorePNB: { xanax: 1, iniettoreVuoto: 1, alprazolam: 1, coltan: 5, polvereDiDMT: 5 }
+            baseInLegno: { martello: 0.1, chiodi: 4, legno: 40 },
+            tessuto: { straccio: 2 },
+            cassaInLegno: { martello: 0.02, chiodo: 2, legno: 20 },
+            pareteInLegno: { martello: 0.1, chiodi: 5, legno: 50 },
+            telaioPortaInLegno: { martello: 0.1, componenteMetallico: 1, legno: 15 },
+            fornice: { martello: 0.1, selce: 10, pietrisco: 50 },
+            portaInLegno: { martello: 0.1, lamiera: 1, componenteMetallico: 2, legno: 15 },
+            pilastroInLegno: { martello: 0.1, chiodo: 2, legno: 20 },
+            scalaPioliInLegno: { martello: 0.1, chiodo: 20, legno: 25 },
+            tavoloLavoroL1: { martello: 0.1, lamiera: 2, chiodo: 20, ferro: 50, carta: 5, legno: 25 },
+            scalaInLegno: { martello: 0.1, chiodi: 5, legno: 25 },
+            soffittoInLegno: { martello: 0.1, chiodi: 10, legno: 30 },
+            cassaGrandeInLegno: { martello: 0.1, chiodi: 10, legno: 35 },
+            paretePiccolaInLegno: { martello: 0.1, chiodi: 30, legno: 30 },
+            cancelloInLegno: { martello: 0.1, chiodi: 25, legno: 65 },
+            telaioCancelloInLegno: { martello: 0.1, chiodi: 10, legno: 25 },
+            telaioFinestraInLegno: { martello: 0.1, chiodi: 5, legno: 30 },
+            finestraInLegno: { martello: 0.1, chiodi: 7, legno: 15 },
+            pareteGrandeInLegno: { martello: 0.2, chiodi: 30, legno: 90 },
+            telaioCancelloGrandeInLegno: { martello: 0.1, chiodi: 75, legno: 50 },
+            cancelloGrandeInLegno: { martello: 0.1, chiodi: 30, legno: 75 },
+            tavoloLavoroL2: { martello: 0.3, lamiera: 5, carta: 10, chiodi: 30, legno: 30, ferro: 100 },
+            tavoloRiparazione: { martello: 0.8, lamiera: 10, nastroAdesivo: 10, ferro: 200 },
+            baseInMetallo: { martello: 0.1, lamiera: 2, chiodi: 4, ferro: 40 },
+            pareteInMetallo: { martello: 0.1, lamiera: 4, chiodi: 5, ferro: 50 },
+            scalaPioliInMetallo: { martello: 0.1, lamiera: 5, chiodi: 20, ferro: 50 },
+            portaInMetallo: { martello: 0.1, lamiera: 1, componenteMetallico: 2, ferro: 15 },
+            baseTriangolareInLegno: { martello: 0.1, lamiera: 2, componenteMetallico: 4, legno: 25 },
+            soffittoTriangolareInLegno: { martello: 0.1, lamiera: 2, componenteMetallico: 2, legno: 20 },
+            zainoMedio: { nastro: 4, gomma: 5, pelleLavorata: 25, tessuto: 50 },
+            baseTriangolareInPetra: { martello: 0.1, lamiera: 5, componenteMetallico: 7, pietrisco: 50 },
+            soffittoTriangolareInPietra: { martello: 0.1, lamiera: 5, componenteMetallico: 7, pietrisco: 50 },
+            tavoloLavoroL3: { martello: 0.8, lamiera: 10, carta: 20, legno: 50, chiodi: 50, ferro: 200 }
         };
 
         let dettagliOggetto = [];

@@ -104,26 +104,53 @@
         <div class="container">
             <label for="object">Scegli un oggetto:</label>
             <select id="object">
-                <option value="benda">Benda</option>
-                <option value="sutura">Sutura</option>
-                <option value="penicillina">Penicillina</option>
-                <option value="unguento">Unguento</option>
-                <option value="collaDiPesce">Colla Di Pesce</option>
-                <option value="cotoneEmostatico">Cotone Emostatico</option>
-                <option value="ossicodone">Ossicodone</option>
-                <option value="antidolorificoNaturale">Antidolorifico Naturale</option>
-                <option value="antidolorifico">Antidolorifico</option>
-                <option value="kitPrimoSoccorso">Kit Primo Soccorso</option>
-                <option value="sigarettaDrum">Sigaretta Drum</option>
-                <option value="jointEphedra">Joint Ephedra</option>
-                <option value="tisana">Tisana</option>
-                <option value="fitoregulatori">Fitoregulatori</option>
-                <option value="cassaDaParamedico">Cassa Da Paramedico</option>
-                <option value="polvereDiDMT">Polvere Di DMT</option>
-                <option value="jointMarijuana">Joint Marijuana</option>
-                <option value="lettinoMedico">Lettino Medico</option>
-                <option value="morfina">Morfina</option>
-                <option value="iniettorePNB">Iniettore PNB</option>
+                <option value="pasta">Pasta</option>
+                <option value="torcia">Torcia</option>
+                <option value="cartine">Cartine</option>
+                <option value="pelleLavorata">Pelle Lavorata</option>
+                <option value="zucchero">Zucchero</option>
+                <option value="piccone">Piccone</option>
+                <option value="cannaDaPesca">Canna da Pesca</option>
+                <option value="biocarburante">Biocarburante</option>
+                <option value="semePotenziatoGrano">Seme Potenziato Grano</option>
+                <option value="zainoPiccolo">Zaino Piccolo</option>
+                <option value="bussola">Bussola</option>
+                <option value="filo">Filo</option>
+                <option value="zainoMedio">Zaino Medio</option>
+                <option value="radio">Radio</option>
+                <option value="concime">Concime</option>
+                <option value="semePotenziatoAnguria">Seme Potenziato Anguria</option>
+                <option value="rete">Rete</option>
+                <option value="corda">Corda</option>
+                <option value="nematocidi">Nematocidi</option>
+                <option value="filtro">Filtro</option>
+                <option value="semePotenziatoZucca">Seme Potenziato Zucca</option>
+                <option value="filtroPerMaschera">Filtro per Maschera</option>
+                <option value="semePotenziatoPatata">Seme Potenziato Patata</option>
+                <option value="diserbante">Diserbante</option>
+                <option value="concimeConcentrato">Concime Concentrato</option>
+                <option value="fungicidi">Fungicidi</option>
+                <option value="semePotenziatoCaffe">Seme Potenziato Caffè</option>
+                <option value="semePotenziatoPomodoro">Seme Potenziato Pomodoro</option>
+                <option value="binocolo">Binocolo</option>
+                <option value="erbicidi">Erbicidi</option>
+                <option value="insetticidi">Insetticidi</option>
+                <option value="semePotenziatoArancia">Seme Potenziato Arancia</option>
+                <option value="semePotenziatoLimone">Seme Potenziato Limone</option>
+                <option value="semePotenziatoCarota">Seme Potenziato Carota</option>
+                <option value="rodenticidi">Rodenticidi</option>
+                <option value="semePotenziatoMela">Seme Potenziato Mela</option>
+                <option value="semePotenziatoRiso">Seme Potenziato Riso</option>
+                <option value="semePotenziatoLuppolo">Seme Potenziato Luppolo</option>
+                <option value="semePotenziatoOlivo">Seme Potenziato Olivo</option>
+                <option value="ceramica">Ceramica</option>
+                <option value="semePotenziatoUva">Seme Potenziato Uva</option>
+                <option value="semePotenziatoCarciofo">Seme Potenziato Carciofo</option>
+                <option value="semePotenziatoTabacco">Seme Potenziato Tabacco</option>
+                <option value="compostoOrganico">Composto Organico</option>
+                <option value="filtroPerOlio">Filtro per Olio</option>
+                <option value="semePotenziatoInsalata">Seme Potenziato Insalata</option>
+                <option value="semePotenziatoMais">Seme Potenziato Mais</option>
             </select>
             <label for="quantity">Quantità:</label>
             <input type="number" id="quantity" min="1" value="1">
@@ -144,26 +171,53 @@
 
     <script>
         const materialiPerOggetto = {
-            benda: { disinfettante: 1, straccio: 1 },
-            sutura: { filo: 1, ago: 1 },
-            penicillina: { lattePastorizzato: 1, fungo: 2 },
-            unguento: { pestello: 1, limone: 1, papavero: 2, ephedra: 2 },
-            collaDiPesce: { pesceCrudo: 1 },
-            cotoneEmostatico: { disinfettante: 0.9, papavero: 3, cotone: 3, ephedra: 3 },
-            ossicodone: { compressa: 1, papavero: 5 },
-            antidolorificoNaturale: { erbaAromatica: 1, zenzero: 1 },
-            antidolorifico: { aspirina: 1, compressa: 1 },
-            kitPrimoSoccorso: { disinfettante: 0.9, cotoneEmostatico: 1, benda: 2 },
-            sigarettaDrum: { cartinaArrotolare: 1, tabaccoEssiccato: 2 },
-            jointEphedra: { cartinaArrotolare: 1, tabaccoEssiccato: 3, ephedra: 3 },
-            tisana: { bottigliaAcqua: 1, mela: 2, erbaAromatica: 2 },
-            fitoregulatori: { ephedra: 1, acqua: 2, papavero: 2 },
-            cassaDaParamedico: { ago: 3, filo: 1, cassettaAttrezzi: 1, benda: 2, kitPrimoSoccorso: 1 },
-            polvereDiDMT: { cristalloDMT: 5 },
-            jointMarijuana: { cartinaArrotolare: 1, tabaccoEssiccato: 3, marijuana: 10 },
-            lettinoMedico: { nastroAdesivo: 8, legno: 12, cotone: 12, filo: 15 },
-            morfina: { iniettoreVuoto: 1, alprazolam: 1, morfinaGrezza: 7 },
-            iniettorePNB: { xanax: 1, iniettoreVuoto: 1, alprazolam: 1, coltan: 5, polvereDiDMT: 5 }
+            pasta: { macchinaPerPasta: 0.2, farina: 5 },
+            torcia: { pila: 2, plastica: 10 },
+            cartine: { riso: 1, acqua: 1 },
+            pelleLavorata: { pelleNonConciata: 1 },
+            zucchero: { cannaDaZucchero: 1 },
+            piccone: { ferro: 3, legno: 3 },
+            cannaDaPesca: { ferro: 3, legno: 3 },
+            biocarburante: { petrolio: 1 },
+            semePotenziatoGrano: { acqua: 1, semeGrano: 1, concime: 2 },
+            zainoPiccolo: { nastroAdesivo: 4, gomma: 5, pelleLavorata: 15, tessuto: 50 },
+            bussola: { alluminio: 1, vetro: 1, plastica: 3 },
+            filo: { straccio: 1 },
+            zainoMedio: { nastroAdesivo: 5, gomma: 6, pelleLavorata: 30, tessuto: 70 },
+            radio: { ferro: 2, vetro: 2, pila: 3, plastica: 10 },
+            concime: { acqua: 1, bicarbonatoDiSodio: 2, letame: 5, pietrisco: 10 },
+            semePotenziatoAnguria: { semeAnguria: 1, concime: 3 },
+            rete: { cotone: 25, ephedra: 50 },
+            corda: { rame: 5, cotone: 25, ephedra: 60 },
+            nematocidi: { pietrisco: 1, anidrideCarbonica: 1, vermi: 3 },
+            filtro: { ferro: 2, plastica: 4, gomma: 8, tessuto: 10 },
+            semePotenziatoZucca: { semeZucca: 1, concime: 1 },
+            filtroPerMaschera: { ago: 1, filo: 1, cotone: 20 },
+            semePotenziatoPatata: { semePatata: 1, concime: 3 },
+            diserbante: { sidroDiMele: 0.5, ammoniaca: 1, acqua: 1, fostato: 15 },
+            concimeConcentrato: { antidolorifico: 1, bicarbonatoDiSodio: 2, letame: 5 },
+            fungicidi: { alcool: 0.5, rame: 3, anidrideCarbonica: 1 },
+            semePotenziatoCaffe: { semeCaffe: 1, concimeConcentrato: 1 },
+            semePotenziatoPomodoro: { semePomodoro: 1, concimeConcentrato: 1 },
+            binocolo: { vetro: 2, plastica: 10 },
+            erbicidi: { ammoniaca: 1, bicarbonatoDiSodio: 1 },
+            insetticidi: { ephedrina: 1, anidrideCarbonica: 1, bicarbonatoDiSodio: 2, zolfo: 2 },
+            semePotenziatoArancia: { semeArancia: 1, concimeConcentrato: 1 },
+            semePotenziatoLimone: { semeLimone: 1, concimeConcentrato: 1 },
+            semePotenziatoCarota: { semeCarota: 1, concimeConcentrato: 1 },
+            rodenticidi: { latte: 1, tossina: 1, polvereDiDMT: 3 },
+            semePotenziatoMela: { semeMela: 1, concimeConcentrato: 1 },
+            semePotenziatoRiso: { semeRiso: 1, concimeConcentrato: 1 },
+            semePotenziatoLuppolo: { semeLuppolo: 1, concimeConcentrato: 1 },
+            semePotenziatoOlivo: { semeOlivo: 1, concimeConcentrato: 1 },
+            ceramica: { argilla: 3 },
+            semePotenziatoUva: { semeUva: 1, concimeConcentrato: 1 },
+            semePotenziatoCarciofo: { semeCarciofo: 1, concimeConcentrato: 1 },
+            semePotenziatoTabacco: { semeTabacco: 1, concimePotenziato: 1 },
+            compostoOrganico: { rifiutiOrganici: 1, multivitaminico: 3, verme: 3, pietrisco: 5, letame: 20 },
+            filtroPerOlio: { azoto: 3, ferro: 5, plastica: 5, tessuto: 10 },
+            semePotenziatoInsalata: { concimeConcentrato: 1, semeInsalata: 1 },
+            semePotenziatoMais: { semeMais: 1, concimeConcentrato: 1 }
         };
 
         let dettagliOggetto = [];

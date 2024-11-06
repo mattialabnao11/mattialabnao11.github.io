@@ -104,26 +104,30 @@
         <div class="container">
             <label for="object">Scegli un oggetto:</label>
             <select id="object">
-                <option value="benda">Benda</option>
-                <option value="sutura">Sutura</option>
-                <option value="penicillina">Penicillina</option>
-                <option value="unguento">Unguento</option>
-                <option value="collaDiPesce">Colla Di Pesce</option>
-                <option value="cotoneEmostatico">Cotone Emostatico</option>
-                <option value="ossicodone">Ossicodone</option>
-                <option value="antidolorificoNaturale">Antidolorifico Naturale</option>
-                <option value="antidolorifico">Antidolorifico</option>
-                <option value="kitPrimoSoccorso">Kit Primo Soccorso</option>
-                <option value="sigarettaDrum">Sigaretta Drum</option>
-                <option value="jointEphedra">Joint Ephedra</option>
-                <option value="tisana">Tisana</option>
-                <option value="fitoregulatori">Fitoregulatori</option>
-                <option value="cassaDaParamedico">Cassa Da Paramedico</option>
-                <option value="polvereDiDMT">Polvere Di DMT</option>
-                <option value="jointMarijuana">Joint Marijuana</option>
-                <option value="lettinoMedico">Lettino Medico</option>
-                <option value="morfina">Morfina</option>
-                <option value="iniettorePNB">Iniettore PNB</option>
+                <option value="disinfettante">Disinfettante</option>
+                <option value="propital">Propital</option>
+                <option value="barattoloPolvereDaSparo">Barattolo Polvere da Sparo</option>
+                <option value="ampolla">Ampolla</option>
+                <option value="compressa">Compressa</option>
+                <option value="bicarbonatoDiSodio">Bicarbonato di Sodio</option>
+                <option value="anidrideCarbonica">Anidride Carbonica</option>
+                <option value="ammoniaca">Ammoniaca</option>
+                <option value="aspirina">Aspirina</option>
+                <option value="ephedrina">Ephedrina</option>
+                <option value="alprazolam">Alprazolam</option>
+                <option value="contagocce">Contagocce</option>
+                <option value="whiskey">Whiskey</option>
+                <option value="fibraDiCarbonio">Fibra di Carbonio</option>
+                <option value="fibraDiVetro">Fibra di Vetro</option>
+                <option value="lattice">Lattice</option>
+                <option value="xanax">Xanax</option>
+                <option value="morfinaGrezza">Morfina Grezza</option>
+                <option value="tossina">Tossina</option>
+                <option value="magnesio">Magnesio</option>
+                <option value="potassio">Potassio</option>
+                <option value="kevlar">Kevlar</option>
+                <option value="molotov">Molotov</option>
+                <option value="anfetamina">Anfetamina</option>
             </select>
             <label for="quantity">Quantità:</label>
             <input type="number" id="quantity" min="1" value="1">
@@ -144,26 +148,30 @@
 
     <script>
         const materialiPerOggetto = {
-            benda: { disinfettante: 1, straccio: 1 },
-            sutura: { filo: 1, ago: 1 },
-            penicillina: { lattePastorizzato: 1, fungo: 2 },
-            unguento: { pestello: 1, limone: 1, papavero: 2, ephedra: 2 },
-            collaDiPesce: { pesceCrudo: 1 },
-            cotoneEmostatico: { disinfettante: 0.9, papavero: 3, cotone: 3, ephedra: 3 },
-            ossicodone: { compressa: 1, papavero: 5 },
-            antidolorificoNaturale: { erbaAromatica: 1, zenzero: 1 },
-            antidolorifico: { aspirina: 1, compressa: 1 },
-            kitPrimoSoccorso: { disinfettante: 0.9, cotoneEmostatico: 1, benda: 2 },
-            sigarettaDrum: { cartinaArrotolare: 1, tabaccoEssiccato: 2 },
-            jointEphedra: { cartinaArrotolare: 1, tabaccoEssiccato: 3, ephedra: 3 },
-            tisana: { bottigliaAcqua: 1, mela: 2, erbaAromatica: 2 },
-            fitoregulatori: { ephedra: 1, acqua: 2, papavero: 2 },
-            cassaDaParamedico: { ago: 3, filo: 1, cassettaAttrezzi: 1, benda: 2, kitPrimoSoccorso: 1 },
-            polvereDiDMT: { cristalloDMT: 5 },
-            jointMarijuana: { cartinaArrotolare: 1, tabaccoEssiccato: 3, marijuana: 10 },
-            lettinoMedico: { nastroAdesivo: 8, legno: 12, cotone: 12, filo: 15 },
-            morfina: { iniettoreVuoto: 1, alprazolam: 1, morfinaGrezza: 7 },
-            iniettorePNB: { xanax: 1, iniettoreVuoto: 1, alprazolam: 1, coltan: 5, polvereDiDMT: 5 }
+            disinfettante: { alcol: 0.5, bottiglia: 1 },
+            propital: { plastica: 3, penicillina: 5 },
+            barattoloPolvereDaSparo: { salnitro: 1, zolfo: 3, carbone: 5 },
+            ampolla: { vetro: 5 },
+            compressa: { zucchero: 2, collaDiPesce: 5 },
+            bicarbonatoDiSodio: { anidrideCarbonica: 2, ammoniaca: 3 },
+            anidrideCarbonica: { filtro: 1, batteria: 1, ventolaElettrica: 1 },
+            ammoniaca: { disinfettante: 0.9, ferro: 2, azoto: 1 },
+            aspirina: { compressa: 1, erbaAromatica: 2, antidolorificoNaturale: 2 },
+            ephedrina: { ephedra: 2, papavero: 2 },
+            alprazolam: { ephedra: 2, ephedrina: 2 },
+            contagocce: { gomma: 2, vetro: 2 },
+            whiskey: { alcolDistillato: 1, bottigliaVuota: 1, mela: 2, arancia: 2, pera: 2 },
+            fibraDiCarbonio: { carbonio: 1, grafite: 2 },
+            fibraDiVetro: { grafite: 3, vetro: 5 },
+            lattice: { collaDiPesce: 1, plastica: 10 },
+            xanax: { alprazolam: 2 },
+            morfinaGrezza: { ephedrina: 3, papavero: 3 },
+            tossina: { integratoreMultivitaminicoScaduto: 1, contagocce: 1 },
+            magnesio: { integratoreMultivitaminicoScaduto: 1, contagocce: 1 },
+            potassio: { integratoreMultivitaminicoScaduto: 1, contagocce: 1 },
+            kevlar: { carbonio: 3, fibraDiCarbonio: 5, ceramica: 10 },
+            molotov: { whiskey: 1, fosforo: 5, straccio: 10 },
+            anfetamina: { acqua: 2, zolfo: 3 }
         };
 
         let dettagliOggetto = [];

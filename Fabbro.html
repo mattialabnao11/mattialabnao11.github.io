@@ -104,26 +104,41 @@
         <div class="container">
             <label for="object">Scegli un oggetto:</label>
             <select id="object">
-                <option value="benda">Benda</option>
-                <option value="sutura">Sutura</option>
-                <option value="penicillina">Penicillina</option>
-                <option value="unguento">Unguento</option>
-                <option value="collaDiPesce">Colla Di Pesce</option>
-                <option value="cotoneEmostatico">Cotone Emostatico</option>
-                <option value="ossicodone">Ossicodone</option>
-                <option value="antidolorificoNaturale">Antidolorifico Naturale</option>
-                <option value="antidolorifico">Antidolorifico</option>
-                <option value="kitPrimoSoccorso">Kit Primo Soccorso</option>
-                <option value="sigarettaDrum">Sigaretta Drum</option>
-                <option value="jointEphedra">Joint Ephedra</option>
-                <option value="tisana">Tisana</option>
-                <option value="fitoregulatori">Fitoregulatori</option>
-                <option value="cassaDaParamedico">Cassa Da Paramedico</option>
-                <option value="polvereDiDMT">Polvere Di DMT</option>
-                <option value="jointMarijuana">Joint Marijuana</option>
-                <option value="lettinoMedico">Lettino Medico</option>
-                <option value="morfina">Morfina</option>
-                <option value="iniettorePNB">Iniettore PNB</option>
+                <option value="ago">Ago</option>
+                <option value="mazza">Mazza</option>
+                <option value="piastraAnalisiSangue">Piastra per Analisi del Sangue</option>
+                <option value="macchinaPasta">Macchina per la Pasta</option>
+                <option value="martello">Martello</option>
+                <option value="mollaLeggera">Molla Leggera</option>
+                <option value="chiodi">Chiodi</option>
+                <option value="percussoreLeggero">Percussore Leggero</option>
+                <option value="sns">SNS</option>
+                <option value="accettaBattaglia">Accetta da Battaglia</option>
+                <option value="alluminio">Alluminio</option>
+                <option value="pestello">Pestello</option>
+                <option value="accetta">Accetta</option>
+                <option value="piccone">Piccone</option>
+                <option value="machete">Machete</option>
+                <option value="katana">Katana</option>
+                <option value="sega">Sega</option>
+                <option value="lamaAscia">Lama Ascia</option>
+                <option value="coltan">Coltan</option>
+                <option value="strozzatore">Strozzatore</option>
+                <option value="caricatoreEsteso">Caricatore Esteso</option>
+                <option value="calcioVariabile">Calcio Variabile</option>
+                <option value="silenziatore">Silenziatore</option>
+                <option value="caricatoreEstesoSmg">Caricatore Esteso SMG</option>
+                <option value="impugnaturaPesante">Impugnatura Pesante</option>
+                <option value="acciaio">Acciaio</option>
+                <option value="cestelloCentrifuga">Cestello per Centrifuga</option>
+                <option value="iniettoreVuoto">Iniettore Vuoto</option>
+                <option value="smallScope">Small Scope</option>
+                <option value="mollaRinforzata">Molla Rinforzata</option>
+                <option value="percussoreRinforzato">Percussore Rinforzato</option>
+                <option value="mediumScope">Medium Scope</option>
+                <option value="macroScope">Macro Scope</option>
+                <option value="caricatoreEstesoFucile">Caricatore Esteso Fucile</option>
+                <option value="silenziatorePesante">Silenziatore Pesante</option>
             </select>
             <label for="quantity">Quantità:</label>
             <input type="number" id="quantity" min="1" value="1">
@@ -144,26 +159,41 @@
 
     <script>
         const materialiPerOggetto = {
-            benda: { disinfettante: 1, straccio: 1 },
-            sutura: { filo: 1, ago: 1 },
-            penicillina: { lattePastorizzato: 1, fungo: 2 },
-            unguento: { pestello: 1, limone: 1, papavero: 2, ephedra: 2 },
-            collaDiPesce: { pesceCrudo: 1 },
-            cotoneEmostatico: { disinfettante: 0.9, papavero: 3, cotone: 3, ephedra: 3 },
-            ossicodone: { compressa: 1, papavero: 5 },
-            antidolorificoNaturale: { erbaAromatica: 1, zenzero: 1 },
-            antidolorifico: { aspirina: 1, compressa: 1 },
-            kitPrimoSoccorso: { disinfettante: 0.9, cotoneEmostatico: 1, benda: 2 },
-            sigarettaDrum: { cartinaArrotolare: 1, tabaccoEssiccato: 2 },
-            jointEphedra: { cartinaArrotolare: 1, tabaccoEssiccato: 3, ephedra: 3 },
-            tisana: { bottigliaAcqua: 1, mela: 2, erbaAromatica: 2 },
-            fitoregulatori: { ephedra: 1, acqua: 2, papavero: 2 },
-            cassaDaParamedico: { ago: 3, filo: 1, cassettaAttrezzi: 1, benda: 2, kitPrimoSoccorso: 1 },
-            polvereDiDMT: { cristalloDMT: 5 },
-            jointMarijuana: { cartinaArrotolare: 1, tabaccoEssiccato: 3, marijuana: 10 },
-            lettinoMedico: { nastroAdesivo: 8, legno: 12, cotone: 12, filo: 15 },
-            morfina: { iniettoreVuoto: 1, alprazolam: 1, morfinaGrezza: 7 },
-            iniettorePNB: { xanax: 1, iniettoreVuoto: 1, alprazolam: 1, coltan: 5, polvereDiDMT: 5 }
+            ago: { ferro: 1 },
+            mazza: { nastro: 1, legno: 2 },
+            piastraAnalisiSangue: { gomma: 2, ferro: 10 },
+            macchinaPasta: { ferro: 5, plastica: 5, componentiMetallici: 10 },
+            martello: { legno: 1, nastro: 1, ferro: 2 },
+            mollaLeggera: { ferro: 2 },
+            chiodi: { ferro: 1 },
+            percussoreLeggero: { ferro: 4 },
+            sns: { mollaLeggera: 1, percussoreLeggero: 1, ferro: 10 },
+            accettaBattaglia: { nastro: 1, legno: 3, ferro: 5 },
+            alluminio: { lattine: 3 },
+            pestello: { legno: 4 },
+            accetta: { nastro: 1, legno: 2, ferro: 6 },
+            piccone: { nastro: 1, legno: 3, ferro: 5 },
+            machete: { nastro: 1, gomma: 3, ferro: 10 },
+            katana: { pelleLavorata: 1, nastro: 1, ferro: 25 },
+            sega: { nastro: 1, gomma: 5, ferro: 15 },
+            lamaAscia: { nastro: 1, legno: 3, ferro: 5 },
+            coltan: { contagocce: 1, rame: 3, ammoniaca: 4, alluminio: 5 },
+            strozzatore: { ferro: 5 },
+            caricatoreEsteso: { mollaLeggera: 1, componenteMetallico: 2, plastica: 30 },
+            calcioVariabile: { gomma: 2, plastica: 5, ferro: 10 },
+            silenziatore: { filtroOlio: 1, plastica: 5, ferro: 5 },
+            caricatoreEstesoSmg: { plastica: 1, molle: 2, componentiMetallici: 4 },
+            impugnaturaPesante: { ferro: 2, plastica: 3, gomma: 5 },
+            acciaio: { ferro: 2, fibraDiCarbonio: 2 },
+            cestelloCentrifuga: { acciaio: 5, componenteMetallico: 5, plastica: 5 },
+            iniettoreVuoto: { pila: 3, acciaio: 3, vetro: 5, plastica: 5 },
+            smallScope: { pila: 5, vetro: 7, plastica: 10, ferro: 10 },
+            mollaRinforzata: { carbonio: 3, ferro: 10 },
+            percussoreRinforzato: { carbonio: 3, ferro: 20 },
+            mediumScope: { acciaio: 3, pila: 5, vetro: 10, plastica: 25 },
+            macroScope: { acciaio: 5, pila: 10, vetro: 15, plastica: 40 },
+            caricatoreEstesoFucile: { molla: 1, acciaio: 3, componenteMetallico: 5, gomma: 20, plastica: 40 },
+            silenziatorePesante: { filtroOlio: 5, acciaio: 7, plastica: 10 }
         };
 
         let dettagliOggetto = [];

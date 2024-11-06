@@ -104,26 +104,40 @@
         <div class="container">
             <label for="object">Scegli un oggetto:</label>
             <select id="object">
-                <option value="benda">Benda</option>
-                <option value="sutura">Sutura</option>
-                <option value="penicillina">Penicillina</option>
-                <option value="unguento">Unguento</option>
-                <option value="collaDiPesce">Colla Di Pesce</option>
-                <option value="cotoneEmostatico">Cotone Emostatico</option>
-                <option value="ossicodone">Ossicodone</option>
-                <option value="antidolorificoNaturale">Antidolorifico Naturale</option>
-                <option value="antidolorifico">Antidolorifico</option>
-                <option value="kitPrimoSoccorso">Kit Primo Soccorso</option>
-                <option value="sigarettaDrum">Sigaretta Drum</option>
-                <option value="jointEphedra">Joint Ephedra</option>
-                <option value="tisana">Tisana</option>
-                <option value="fitoregulatori">Fitoregulatori</option>
-                <option value="cassaDaParamedico">Cassa Da Paramedico</option>
-                <option value="polvereDiDMT">Polvere Di DMT</option>
-                <option value="jointMarijuana">Joint Marijuana</option>
-                <option value="lettinoMedico">Lettino Medico</option>
-                <option value="morfina">Morfina</option>
-                <option value="iniettorePNB">Iniettore PNB</option>
+                <option value="casettaAttrezzi">Casetta attrezzi</option>
+                <option value="analizzatoreGruppoSanguigno">Analizzatore gruppo sanguigno</option>
+                <option value="ricambioSpecialeAuto">Ricambio speciale auto</option>
+                <option value="MunizioniPistola_12">12 munizioni pistola</option>
+                <option value="MunizioniPistola_240">240 munizioni pistola</option>
+                <option value="kitRiparazioneBase">Kit riparazione base</option>
+                <option value="kitPistola">Kit pistola</option>
+                <option value="carenaMoto">Carena moto</option>
+                <option value="sospensioneMoto">Sospensione moto</option>
+                <option value="cerchioneMoto">Cerchione moto</option>
+                <option value="frenoMoto">Freno moto</option>
+                <option value="cofanoCompatto">Cofano compatto</option>
+                <option value="motoreCompact">Motore compact</option>
+                <option value="batteriaCompact">Batteria compact</option>
+                <option value="ventolaElettricaFiltro">Ventola elettrica per filtro</option>
+                <option value="sospensioneCompact">Sospensione compact</option>
+                <option value="frenoCompact">Freno compact</option>
+                <option value="pneumaticoCompact">Pneumatico compact</option>
+                <option value="parabrezzaAnterioreCompact">Parabrezza anteriore compact</option>
+                <option value="parabrezzaPosterioreCompact">Parabrezza posteriore compact</option>
+                <option value="sprayPerPneumatici">Spray per pneumatici</option>
+                <option value="torciaPistola">Torcia pistola</option>
+                <option value="battleAxe">Battle axe</option>
+                <option value="cofanoOffroad">Cofano offroad</option>
+                <option value="motoreOffroad">Motore offroad</option>
+                <option value="batteriaOffroad">Batteria offroad</option>
+                <option value="sospensioneOffroad">Sospensione offroad</option>
+                <option value="frenoOffroad">Freno offroad</option>
+                <option value="pneumaticoOffroad">Pneumatico offroad</option>
+                <option value="parabrezzaAnterioreOffroad">Parabrezza anteriore offroad</option>
+                <option value="parabrezzaPosterioreOffroad">Parabrezza posteriore offroad</option>
+                <option value="kitRiparazioneMedio">Kit riparazione medio</option>
+                <option value="centrifuga">Centrifuga</option>
+                <option value="kitSMG">Kit SMG</option>
             </select>
             <label for="quantity">Quantità:</label>
             <input type="number" id="quantity" min="1" value="1">
@@ -144,26 +158,40 @@
 
     <script>
         const materialiPerOggetto = {
-            benda: { disinfettante: 1, straccio: 1 },
-            sutura: { filo: 1, ago: 1 },
-            penicillina: { lattePastorizzato: 1, fungo: 2 },
-            unguento: { pestello: 1, limone: 1, papavero: 2, ephedra: 2 },
-            collaDiPesce: { pesceCrudo: 1 },
-            cotoneEmostatico: { disinfettante: 0.9, papavero: 3, cotone: 3, ephedra: 3 },
-            ossicodone: { compressa: 1, papavero: 5 },
-            antidolorificoNaturale: { erbaAromatica: 1, zenzero: 1 },
-            antidolorifico: { aspirina: 1, compressa: 1 },
-            kitPrimoSoccorso: { disinfettante: 0.9, cotoneEmostatico: 1, benda: 2 },
-            sigarettaDrum: { cartinaArrotolare: 1, tabaccoEssiccato: 2 },
-            jointEphedra: { cartinaArrotolare: 1, tabaccoEssiccato: 3, ephedra: 3 },
-            tisana: { bottigliaAcqua: 1, mela: 2, erbaAromatica: 2 },
-            fitoregulatori: { ephedra: 1, acqua: 2, papavero: 2 },
-            cassaDaParamedico: { ago: 3, filo: 1, cassettaAttrezzi: 1, benda: 2, kitPrimoSoccorso: 1 },
-            polvereDiDMT: { cristalloDMT: 5 },
-            jointMarijuana: { cartinaArrotolare: 1, tabaccoEssiccato: 3, marijuana: 10 },
-            lettinoMedico: { nastroAdesivo: 8, legno: 12, cotone: 12, filo: 15 },
-            morfina: { iniettoreVuoto: 1, alprazolam: 1, morfinaGrezza: 7 },
-            iniettorePNB: { xanax: 1, iniettoreVuoto: 1, alprazolam: 1, coltan: 5, polvereDiDMT: 5 }
+            casettaAttrezzi: { lamiera: 1, componentiMetallici: 5 },
+            analizzatoreGruppoSanguigno: { batteria: 1, piastra: 1, componentiMetallici: 8 },
+            ricambioSpecialeAuto: { componentiMetallici: 2 },
+            MunizioniPistola_12: { polvereDaSparo: 0.25, alluminio: 3 },
+            MunizioniPistola_240: { polvereDaSparo: 5, alluminio: 60 },
+            kitRiparazioneBase: { lamiera: 1, cassettaAttrezzi: 1, ricambioSpeciale: 1 },
+            kitPistola: { percussoriLeggeri: 2, gomma: 5, plastica: 5, molleLeggere: 8 },
+            carenaMoto: { ferro: 1, plastica: 10 },
+            sospensioneMoto: { ferro: 1, gomma: 5 },
+            cerchioneMoto: { plastica: 1, ferro: 2, pneumaticiForati: 2 },
+            frenoMoto: { lamiera: 1, ferro: 2 },
+            cofanoCompatto: { ricambiSpeciali: 2, lamiere: 3, ferro: 5 },
+            motoreCompact: { ricambiSpecialiAuto: 2, ferro: 10 },
+            batteriaCompact: { componentiElettronici: 2, caviElettrici: 4, plastica: 4, rame: 5 },
+            ventolaElettricaFiltro: { plastica: 1, ferro: 2, componentiElettronici: 3 },
+            sospensioneCompact: { ferro: 7, plastica: 10 },
+            frenoCompact: { lamiere: 2, ferro: 4 },
+            pneumaticoCompact: { pneumaticoForato: 1, plastica: 2, ferro: 2 },
+            parabrezzaAnterioreCompact: { vetro: 1, ferro: 1, gomma: 4 },
+            parabrezzaPosterioreCompact: { vetro: 1, ferro: 1, gomma: 2 },
+            sprayPerPneumatici: { bomboletta: 1, lattice: 12 },
+            torciaPistola: { coltan: 1, pile: 2, vetro: 3, ferro: 5 },
+            battleAxe: { lamaPerAscia: 1, ferro: 10, chiodi: 10, legno: 20 },
+            cofanoOffroad: { ricambiSpeciali: 2, lamiere: 5, ferro: 15 },
+            motoreOffroad: { ricambiSpeciali: 4, ferro: 12 },
+            batteriaOffroad: { componentiElettronici: 2, rame: 4, caviElettrici: 6, plastica: 7 },
+            sospensioneOffroad: { ferro: 6, plastica: 8 },
+            frenoOffroad: { lamiere: 2, ferro: 4 },
+            pneumaticoOffroad: { plastica: 2, ferro: 2, pneumaticiForati: 4 },
+            parabrezzaAnterioreOffroad: { vetro: 2, ferro: 2, gomma: 2 },
+            parabrezzaPosterioreOffroad: { vetro: 1, plastica: 5 },
+            kitRiparazioneMedio: { casettaAttrezzi: 1, sprayPneumatici: 1, kitRiparazioneBase: 1 },
+            centrifuga: { cestelloPerCentrifuga: 1, batterie: 2, pile: 2, plastica: 10, componentiElettronici: 20 },
+            kitSMG: { percussoriLeggeri: 5, molleLeggere: 15, gomme: 20, plastica: 20 }
         };
 
         let dettagliOggetto = [];
