@@ -7,114 +7,94 @@
     <style>
         /* Stili generali */
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #fafafa; /* Sfondo chiaro ma meno freddo */
-            color: #444; /* Testo più scuro ma ancora morbido */
+            font-family: Arial, sans-serif;
+            background-color: #edf2f7;
+            color: #2d3748;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+            height: auto;
+            margin-top: 150px;
+            margin-bottom: 150px;
         }
-    
         .main-container {
-            background: #ffffff; /* Bianco per il contenitore */
-            padding: 20px 30px;
-            border-radius: 10px;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* Ombra leggera ma più definita */
+            background: #ffffff;
+            padding: 25px 35px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
             width: 100%;
             max-width: 600px;
             transition: all 0.3s ease;
         }
-    
         h1, h3 {
-            color: #e53e3e; /* Rosso caldo */
+            color: #3182ce;
             text-align: center;
             margin-top: 0;
-            margin-bottom: 15px;
-            font-size: 2em; /* Dimensioni moderate per i titoli */
+            margin-bottom: 20px;
         }
-    
         .container label {
             font-weight: bold;
-            color: #333; /* Colore delle etichette più scuro */
+            color: #2c5282;
         }
-    
         .container select, .container input[type="number"], .container button {
             width: 100%;
             padding: 12px;
             margin-top: 8px;
             border-radius: 6px;
-            border: 1px solid #ddd; /* Bordi leggeri */
+            border: 1px solid #cbd5e0;
             font-size: 16px;
             box-sizing: border-box;
             outline: none;
-            background-color: #f5f5f5; /* Background chiaro ma definito */
-            color: #333; /* Testo scuro per gli input */
+            transition: all 0.2s ease;
         }
-    
         .container select:focus, .container input[type="number"]:focus, .container button:hover {
-            border-color: #e53e3e; /* Focus di colore rosso più intenso */
-            box-shadow: 0 0 8px rgba(229, 62, 62, 0.3); /* Leggero effetto di focus */
+            border-color: #63b3ed;
+            box-shadow: 0 0 8px rgba(99, 179, 237, 0.3);
         }
-    
         .container button {
-            background-color: #e53e3e; /* Rosso deciso per il pulsante */
+            background-color: #3182ce;
             color: #ffffff;
             font-weight: bold;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            border: none;
         }
-    
         .container button:hover {
-            background-color: #c53030; /* Colore rosso scuro al passaggio del mouse */
+            background-color: #2b6cb0;
         }
-    
         ul {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-    
         li {
-            background-color: #f0f0f0; /* Leggero contrasto per gli elementi della lista */
-            margin: 8px 0;
-            padding: 12px;
-            border-radius: 6px;
-            font-size: 16px;
-            transition: transform 0.2s ease, background-color 0.3s;
+            background-color: #ebf8ff;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: transform 0.2s;
         }
-    
         li:hover {
-            transform: scale(1.03);
-            background-color: #e53e3e; /* Cambia il colore a rosso caldo durante l'hover */
-            color: #ffffff; /* Testo bianco durante l'hover */
+            transform: scale(1.02);
         }
-    
         .indent {
             padding-left: 20px;
-            background-color: #f9f9f9; /* Coerenza con lo sfondo principale */
+            background-color: #e6fffa;
             margin-left: 15px;
         }
-    
         .hidden {
             display: none;
         }
-    
         a {
-            color: #e53e3e; /* Colore rosso per i link */
+            color: #2b6cb0;
             font-weight: bold;
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: color 0.2s;
         }
-    
         a:hover {
-            color: #c53030; /* Colore più scuro per i link durante l'hover */
+            color: #2c5282;
         }
     </style>
-    
-        
 </head>
 <body>
 

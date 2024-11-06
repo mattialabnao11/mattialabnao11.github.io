@@ -9,101 +9,101 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            height: 100%;
-            overflow-x: hidden;
-            transition: margin-left 0.3s; /* Aggiungi la transizione per lo spostamento del corpo */
-            background-color: #121212; /* Colore scuro di sfondo */
-            color: #fff; /* Colore testo chiaro */
+            background-color: #edf2f7; /* Colore chiaro di sfondo */
+            color: #2d3748; /* Colore testo scuro */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            transition: margin-left 0.3s;
         }
-
+    
         /* Immagine a schermo intero */
         .full-image {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100vh; /* Imposta l'altezza su 100% della finestra */
+            height: 100vh;
             background: url('F3677744-5027-4109-8140-4949B3F828AD.png') no-repeat center center/cover;
-            z-index: -1; /* Fa sì che l'immagine sia sotto al contenuto */
-            filter: brightness(50%); /* Abbassa la luminosità per far risaltare il testo */
+            z-index: -1;
+            filter: brightness(60%); /* Luminosità ridotta per contrastare il testo */
         }
-
+    
         /* Stili del menu laterale */
         .sidebar {
             height: 100%;
             width: 250px;
             position: fixed;
             top: 0;
-            left: -250px; /* Nascondi il menu di default */
-            background-color: #b71c1c; /* Colore rosso scuro per il menu */
+            left: -250px;
+            background-color: #3182ce; /* Colore blu per il menu */
             overflow-x: hidden;
-            transition: 0.3s; /* Transizione per aprire/chiudere il menu */
+            transition: 0.3s;
             padding-top: 60px;
-            z-index: 1; /* Assicurati che il menu sia sopra al contenuto */
+            z-index: 1;
+            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1); /* Ombra per maggiore profondità */
         }
-
+    
         .sidebar a {
             padding: 15px 32px;
             text-decoration: none;
-            font-size: 22px;
-            color: white;
+            font-size: 20px;
+            color: #ffffff;
             display: block;
             transition: 0.3s;
-            border-bottom: 1px solid #333; /* Aggiungi una linea separatrice */
+            border-bottom: 1px solid #cbd5e0; /* Separatore leggero */
         }
-
+    
         .sidebar a:hover {
-            background-color: #d32f2f; /* Colore di hover rosso più chiaro */
-            color: #fff;
+            background-color: #63b3ed; /* Blu chiaro per l'hover */
+            color: #2d3748;
         }
-
+    
         /* Pulsante per aprire e chiudere il menu */
         .open-btn {
-            font-size: 30px;
+            font-size: 28px;
             position: absolute;
             top: 20px;
             left: 20px;
             z-index: 100;
-            color: white;
+            color: #2d3748;
             cursor: pointer;
-            transition: transform 0.3s, content 0.3s; /* Aggiungi transizioni per la trasformazione e il contenuto */
+            transition: transform 0.3s;
         }
-
+    
         /* Quando il menu è aperto */
         .sidebar.open {
             left: 0;
         }
-
-        /* Quando il menu è aperto, cambia il simbolo in X */
+    
         .open-btn.open {
-            transform: rotate(180deg); /* Ruota il simbolo */
+            transform: rotate(180deg);
         }
-
+    
         /* Stili per il contenuto */
         .content {
             padding: 20px;
             font-size: 28px;
             text-align: center;
             position: relative;
-            z-index: 2; /* Per farlo apparire sopra l'immagine */
-            transition: margin-left 0.3s; /* Aggiungi la transizione per il contenuto */
-            color: #f5f5f5; /* Colore chiaro per il testo del contenuto */
+            color: #2d3748; /* Colore scuro per migliorare la leggibilità */
+            transition: margin-left 0.3s;
         }
-
+    
+        h1 {
+            font-size: 48px;
+            font-weight: bold;
+            color: #3182ce; /* Blu per il titolo */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+    
         /* Quando il menu è aperto, sposta il contenuto */
         body.menu-open .content {
             margin-left: 250px;
         }
-
-        h1 {
-            font-size: 48px;
-            font-weight: bold;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #ff5722; /* Colore rosso acceso per il titolo */
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Ombra per il titolo */
-        }
     </style>
+    
 </head>
 <body>
 
