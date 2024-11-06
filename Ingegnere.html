@@ -7,94 +7,114 @@
     <style>
         /* Stili generali */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #edf2f7;
-            color: #2d3748;
+            font-family: 'Arial', sans-serif;
+            background-color: #1e1e1e; /* Sfondo scuro per contrastare */
+            color: #f1f1f1; /* Colore del testo chiaro */
             display: flex;
             justify-content: center;
             align-items: center;
-            height: auto;
-            margin-top: 150px;
-            margin-bottom: 150px;
+            height: 100vh;
+            margin: 0;
         }
+    
         .main-container {
-            background: #ffffff;
+            background: #2d2d2d; /* Colore di sfondo più scuro per il contenitore */
             padding: 25px 35px;
             border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25); /* Ombra più morbida e prominente */
             width: 100%;
             max-width: 600px;
             transition: all 0.3s ease;
         }
+    
         h1, h3 {
-            color: #3182ce;
+            color: #ff5733; /* Colore rosso-arancio per i titoli */
             text-align: center;
             margin-top: 0;
             margin-bottom: 20px;
+            text-transform: uppercase;
+            font-size: 2.5em; /* Aumentato per maggiore impatto */
+            letter-spacing: 2px;
         }
+    
         .container label {
             font-weight: bold;
-            color: #2c5282;
+            color: #ff6347; /* Colore rosso aranciato per le etichette */
         }
+    
         .container select, .container input[type="number"], .container button {
             width: 100%;
             padding: 12px;
             margin-top: 8px;
             border-radius: 6px;
-            border: 1px solid #cbd5e0;
+            border: 1px solid #444; /* Bordo scuro per input */
             font-size: 16px;
             box-sizing: border-box;
             outline: none;
             transition: all 0.2s ease;
+            background-color: #333; /* Colore scuro per input */
+            color: #f1f1f1;
         }
+    
         .container select:focus, .container input[type="number"]:focus, .container button:hover {
-            border-color: #63b3ed;
-            box-shadow: 0 0 8px rgba(99, 179, 237, 0.3);
+            border-color: #ff5733;
+            box-shadow: 0 0 8px rgba(255, 87, 51, 0.4); /* Effetto luminoso per il focus */
         }
+    
         .container button {
-            background-color: #3182ce;
+            background-color: #ff5733; /* Rosso acceso per il pulsante */
             color: #ffffff;
             font-weight: bold;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            border: none;
         }
+    
         .container button:hover {
-            background-color: #2b6cb0;
+            background-color: #e04e00; /* Colore più scuro al passaggio del mouse */
         }
+    
         ul {
             list-style: none;
             padding: 0;
             margin: 0;
         }
+    
         li {
-            background-color: #ebf8ff;
-            margin: 5px 0;
-            padding: 10px;
+            background-color: #4a4a4a; /* Grigio scuro per gli elementi */
+            margin: 10px 0;
+            padding: 12px;
             border-radius: 8px;
-            font-size: 15px;
-            transition: transform 0.2s;
+            font-size: 16px;
+            transition: transform 0.2s ease-in-out, background-color 0.3s;
         }
+    
         li:hover {
-            transform: scale(1.02);
+            transform: scale(1.03);
+            background-color: #ff5733; /* Cambia colore a rosso acceso */
         }
+    
         .indent {
             padding-left: 20px;
-            background-color: #e6fffa;
+            background-color: #333; /* Colore scuro con sfondo distinto */
             margin-left: 15px;
         }
+    
         .hidden {
             display: none;
         }
+    
         a {
-            color: #2b6cb0;
+            color: #ff5733; /* Colore rosso-arancio per i link */
             font-weight: bold;
             text-decoration: none;
-            transition: color 0.2s;
+            transition: color 0.3s ease;
         }
+    
         a:hover {
-            color: #2c5282;
+            color: #ff7043; /* Colore più chiaro al passaggio del mouse */
         }
-    </style>
+    </style>    
 </head>
 <body>
 
