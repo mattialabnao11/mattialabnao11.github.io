@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolo Materiali Dettagliato</title>
+    <style>
+        /* Stili generali */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #edf2f7;
+            color: #2d3748;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            margin-top: 150px;
+            margin-bottom: 150px;
+        }
+        .main-container {
+            background: #ffffff;
+            padding: 25px 35px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            max-width: 600px;
+            transition: all 0.3s ease;
+        }
+        h1, h3 {
+            color: #3182ce;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        .container label {
+            font-weight: bold;
+            color: #2c5282;
+        }
+        .container select, .container input[type="number"], .container button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e0;
+            font-size: 16px;
+            box-sizing: border-box;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+        .container select:focus, .container input[type="number"]:focus, .container button:hover {
+            border-color: #63b3ed;
+            box-shadow: 0 0 8px rgba(99, 179, 237, 0.3);
+        }
+        .container button {
+            background-color: #3182ce;
+            color: #ffffff;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .container button:hover {
+            background-color: #2b6cb0;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            background-color: #ebf8ff;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: transform 0.2s;
+        }
+        li:hover {
+            transform: scale(1.02);
+        }
+        .indent {
+            padding-left: 20px;
+            background-color: #e6fffa;
+            margin-left: 15px;
+        }
+        .hidden {
+            display: none;
+        }
+        a {
+            color: #2b6cb0;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        a:hover {
+            color: #2c5282;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <h1>Calcolo Materiali Dettagliato</h1>
+        
+        <div class="container">
+            <label for="object">Scegli un oggetto:</label>
+            <select id="object">
+                <option value="benda">Benda</option>
+                <option value="sutura">Sutura</option>
+                <option value="penicillina">Penicillina</option>
+                <option value="unguento">Unguento</option>
+                <option value="collaDiPesce">Colla Di Pesce</option>
+                <option value="cotoneEmostatico">Cotone Emostatico</option>
+                <option value="ossicodone">Ossicodone</option>
+                <option value="antidolorificoNaturale">Antidolorifico Naturale</option>
+                <option value="antidolorifico">Antidolorifico</option>
+                <option value="kitPrimoSoccorso">Kit Primo Soccorso</option>
+                <option value="sigarettaDrum">Sigaretta Drum</option>
+                <option value="jointEphedra">Joint Ephedra</option>
+                <option value="tisana">Tisana</option>
+                <option value="fitoregulatori">Fitoregulatori</option>
+                <option value="cassaDaParamedico">Cassa Da Paramedico</option>
+                <option value="polvereDiDMT">Polvere Di DMT</option>
+                <option value="jointMarijuana">Joint Marijuana</option>
+                <option value="lettinoMedico">Lettino Medico</option>
+                <option value="morfina">Morfina</option>
+                <option value="iniettorePNB">Iniettore PNB</option>
+            </select>
+            <label for="quantity">Quantità:</label>
+            <input type="number" id="quantity" min="1" value="1">
+            <button onclick="aggiungiOggetto()">Aggiungi Oggetto</button>
+        </div>
+        
+        <div class="form-container">
+            <h3>Materiali Totali Necessari:</h3>
+            <ul id="totalMaterialsList"></ul>
+        </div>
+
+        <div class="container">
+            <h3>Dettaglio Materiali per Oggetto:</h3>
+            <ul id="objectDetails"></ul>
+        </div>
+        
+    </div>
+
+    <script>
+        const materialiPerOggetto = {
+            benda: { disinfettante: 1, straccio: 1 },
+            sutura: { filo: 1, ago: 1 },
+            penicillina: { lattePastorizzato: 1, fungo: 2 },
+            unguento: { pestello: 1, limone: 1, papavero: 2, ephedra: 2 },
+            collaDiPesce: { pesceCrudo: 1 },
+            cotoneEmostatico: { disinfettante: 0.9, papavero: 3, cotone: 3, ephedra: 3 },
+            ossicodone: { compressa: 1, papavero: 5 },
+            antidolorificoNaturale: { erbaAromatica: 1, zenzero: 1 },
+            antidolorifico: { aspirina: 1, compressa: 1 },
+            kitPrimoSoccorso: { disinfettante: 0.9, cotoneEmostatico: 1, benda: 2 },
+            sigarettaDrum: { cartinaArrotolare: 1, tabaccoEssiccato: 2 },
+            jointEphedra: { cartinaArrotolare: 1, tabaccoEssiccato: 3, ephedra: 3 },
+            tisana: { bottigliaAcqua: 1, mela: 2, erbaAromatica: 2 },
+            fitoregulatori: { ephedra: 1, acqua: 2, papavero: 2 },
+            cassaDaParamedico: { ago: 3, filo: 1, cassettaAttrezzi: 1, benda: 2, kitPrimoSoccorso: 1 },
+            polvereDiDMT: { cristalloDMT: 5 },
+            jointMarijuana: { cartinaArrotolare: 1, tabaccoEssiccato: 3, marijuana: 10 },
+            lettinoMedico: { nastroAdesivo: 8, legno: 12, cotone: 12, filo: 15 },
+            morfina: { iniettoreVuoto: 1, alprazolam: 1, morfinaGrezza: 7 },
+            iniettorePNB: { xanax: 1, iniettoreVuoto: 1, alprazolam: 1, coltan: 5, polvereDiDMT: 5 }
+        };
+
+        let dettagliOggetto = [];
+        let totalMaterials = {};
+
+        function aggiungiOggetto() {
+            const oggetto = document.getElementById("object").value;
+            const quantita = parseInt(document.getElementById("quantity").value, 10);
+
+            totalMaterials = {};
+            dettagliOggetto = []; // Reset dei dettagli
+            calcolaMateriali(oggetto, quantita, 0);
+            visualizzaDettagliOggetto();
+            calculateItemMaterials(oggetto, quantita);
+            displayTotalMaterials();
+        }
+
+        function calculateItemMaterials(item, quantity) {
+            const requiredMaterials = materialiPerOggetto[item];
+            dettagliOggetto.push(`Per creare ${quantity}x ${item}:`);
+
+            for (const [material, materialQuantity] of Object.entries(requiredMaterials)) {
+                const totalQuantity = materialQuantity * quantity;
+                dettagliOggetto.push(`- ${totalQuantity}x ${material}`);
+
+                totalMaterials[material] = (totalMaterials[material] || 0) + totalQuantity;
+
+                if (materialiPerOggetto[material]) {
+                    calculateItemMaterials(material, totalQuantity);
+                }
+            }
+        }
+
+        function displayTotalMaterials() {
+            const totalMaterialsList = document.getElementById("totalMaterialsList");
+            totalMaterialsList.innerHTML = "";
+            for (const [material, quantity] of Object.entries(totalMaterials)) {
+                if (!materialiPerOggetto[material]) {
+                    const listItem = document.createElement("li");
+                    listItem.textContent = `${material}: ${quantity}`;
+                    totalMaterialsList.appendChild(listItem);
+                }
+            }
+        }
+
+        function calcolaMateriali(oggetto, quantita, livello) {
+            const materiali = materialiPerOggetto[oggetto];
+
+            dettagliOggetto.push(`<li>${quantita}x ${oggetto}</li>`);
+
+            for (const [materiale, quantitaMateriale] of Object.entries(materiali)) {
+                const quantitaTotale = quantitaMateriale * quantita;
+                const idDettaglio = `${oggetto}-${materiale}-${livello}`; // ID unico basato su livello
+
+                if (materialiPerOggetto[materiale]) {
+                    dettagliOggetto.push(`
+                        <li class="indent">
+                            <a href="#" onclick="toggleDettagli('${materiale}', '${idDettaglio}', ${quantitaTotale}, ${livello + 1})">
+                                ${quantitaTotale}x ${materiale}
+                            </a>
+                            <ul id="details-${idDettaglio}" class="hidden"></ul>
+                        </li>
+                    `);
+                } else {
+                    dettagliOggetto.push(`<li class="indent">${quantitaTotale}x ${materiale}</li>`);
+                }
+            }
+        }
+
+        function toggleDettagli(materiale, idDettaglio, quantita, livello) {
+            const listaDettagli = document.getElementById(`details-${idDettaglio}`);
+            listaDettagli.classList.toggle("hidden");
+
+            if (!listaDettagli.innerHTML) {
+                calcolaMaterialiRicorsivo(materiale, quantita, livello, listaDettagli);
+            }
+        }
+
+        function calcolaMaterialiRicorsivo(oggetto, quantita, livello, listaElement) {
+            const materiali = materialiPerOggetto[oggetto];
+
+            for (const [materiale, quantitaMateriale] of Object.entries(materiali)) {
+                const quantitaTotale = quantitaMateriale * quantita;
+                const idDettaglio = `${oggetto}-${materiale}-${livello}`; // ID unico basato su livello
+                const li = document.createElement("li");
+                li.classList.add("indent");
+
+                if (materialiPerOggetto[materiale]) {
+                    li.innerHTML = `
+                        <a href="#" onclick="toggleDettagli('${materiale}', '${idDettaglio}', ${quantitaTotale}, ${livello + 1})">
+                            ${quantitaTotale}x ${materiale}
+                        </a>
+                        <ul id="details-${idDettaglio}" class="hidden"></ul>
+                    `;
+                } else {
+                    li.textContent = `${quantitaTotale}x ${materiale}`;
+                }
+
+                listaElement.appendChild(li);
+            }
+        }
+
+        function visualizzaDettagliOggetto() {
+            const objectDetailsElement = document.getElementById("objectDetails");
+            objectDetailsElement.innerHTML = dettagliOggetto.join("");
+        }
+    </script>
+</body>
+</html>
