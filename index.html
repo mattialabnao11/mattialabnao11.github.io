@@ -12,6 +12,8 @@
             height: 100%;
             overflow-x: hidden;
             transition: margin-left 0.3s; /* Aggiungi la transizione per lo spostamento del corpo */
+            background-color: #121212; /* Colore scuro di sfondo */
+            color: #fff; /* Colore testo chiaro */
         }
 
         /* Immagine a schermo intero */
@@ -23,6 +25,7 @@
             height: 100vh; /* Imposta l'altezza su 100% della finestra */
             background: url('F3677744-5027-4109-8140-4949B3F828AD.png') no-repeat center center/cover;
             z-index: -1; /* Fa sì che l'immagine sia sotto al contenuto */
+            filter: brightness(50%); /* Abbassa la luminosità per far risaltare il testo */
         }
 
         /* Stili del menu laterale */
@@ -32,7 +35,7 @@
             position: fixed;
             top: 0;
             left: -250px; /* Nascondi il menu di default */
-            background-color: #333;
+            background-color: #b71c1c; /* Colore rosso scuro per il menu */
             overflow-x: hidden;
             transition: 0.3s; /* Transizione per aprire/chiudere il menu */
             padding-top: 60px;
@@ -40,16 +43,18 @@
         }
 
         .sidebar a {
-            padding: 8px 8px 8px 32px;
+            padding: 15px 32px;
             text-decoration: none;
-            font-size: 25px;
+            font-size: 22px;
             color: white;
             display: block;
             transition: 0.3s;
+            border-bottom: 1px solid #333; /* Aggiungi una linea separatrice */
         }
 
         .sidebar a:hover {
-            color: #f1f1f1;
+            background-color: #d32f2f; /* Colore di hover rosso più chiaro */
+            color: #fff;
         }
 
         /* Pulsante per aprire e chiudere il menu */
@@ -77,12 +82,12 @@
         /* Stili per il contenuto */
         .content {
             padding: 20px;
-            color: white;
-            font-size: 24px;
+            font-size: 28px;
             text-align: center;
             position: relative;
             z-index: 2; /* Per farlo apparire sopra l'immagine */
             transition: margin-left 0.3s; /* Aggiungi la transizione per il contenuto */
+            color: #f5f5f5; /* Colore chiaro per il testo del contenuto */
         }
 
         /* Quando il menu è aperto, sposta il contenuto */
@@ -90,6 +95,14 @@
             margin-left: 250px;
         }
 
+        h1 {
+            font-size: 48px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #ff5722; /* Colore rosso acceso per il titolo */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Ombra per il titolo */
+        }
     </style>
 </head>
 <body>
