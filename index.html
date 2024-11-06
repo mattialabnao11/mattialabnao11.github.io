@@ -61,11 +61,17 @@
             z-index: 100;
             color: white;
             cursor: pointer;
+            transition: transform 0.3s; /* Aggiungi una transizione alla trasformazione */
         }
 
         /* Quando il menu è aperto */
         .sidebar.open {
             left: 0;
+        }
+
+        /* Quando il menu è aperto, cambia il simbolo in X */
+        .open-btn.open {
+            transform: rotate(180deg); /* Ruota il simbolo */
         }
 
         /* Stili per il contenuto */
@@ -90,15 +96,17 @@
 
     <!-- Menu laterale -->
     <div class="sidebar" id="mySidebar">
-        <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">×</a>
         <a href="#">Home</a>
-        <a href="Biomedico.html">Bio Medico</a>
-        <a href="#">Servizi</a>
-        <a href="#">Contatti</a>
+        <a href="Scout.html">Scout</a>
+        <a href="Fabbro.html">Fabbro</a>
+        <a href="Chimico.html">Chimico</a>
+        <a href="Biomedico.html">Biomedico</a>
+        <a href="Costruttore.html">Costruttore</a>
+        <a href="Ingegnere.html">Ingegnere</a>
     </div>
 
-    <!-- Pulsante per aprire il menu -->
-    <span class="open-btn" onclick="openNav()">&#9776; Menu</span>
+    <!-- Pulsante per aprire e chiudere il menu -->
+    <span class="open-btn" onclick="toggleNav()">&#9776;</span>
 
     <!-- Immagine a schermo intero -->
     <div class="full-image"></div>
@@ -110,17 +118,26 @@
     </div>
 
     <script>
-        // Funzione per aprire il menu
-        function openNav() {
-            document.getElementById("mySidebar").classList.add("open");
-            document.body.classList.add("menu-open"); // Aggiungi una classe al body per spostare il contenuto
-        }
+        // Funzione per aprire e chiudere il menu
+        function toggleNav() {
+            const sidebar = document.getElementById("mySidebar");
+            const body = document.body;
+            const openBtn = document.querySelector(".open-btn");
 
-        // Funzione per chiudere il menu
-        function closeNav() {
-            document.getElementById("mySidebar").classList.remove("open");
-            document.body.classList.remove("menu-open"); // Rimuovi la classe dal body per ripristinare il contenuto
+            // Controlla se il menu è già aperto
+            if (sidebar.classList.contains("open")) {
+                // Se è aperto, chiudilo
+                sidebar.classList.remove("open");
+                openBtn.classList.remove("open");
+                body.classList.remove("menu-open");
+            } else {
+                // Se è chiuso, aprilo
+                sidebar.classList.add("open");
+                openBtn.classList.add("open");
+                body.classList.add("menu-open");
+            }
         }
     </script>
+
 </body>
 </html>
