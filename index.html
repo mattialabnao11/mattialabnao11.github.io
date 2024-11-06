@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Image con Menu Laterale</title>
+    <style>
+        /* Stili generali per il corpo */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Immagine a schermo intero */
+        .full-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh; /* Imposta l'altezza su 100% della finestra */
+            background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+            z-index: -1; /* Fa sì che l'immagine sia sotto al contenuto */
+        }
+
+        /* Stili del menu laterale */
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: -250px; /* Nascondi il menu di default */
+            background-color: #333;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 60px;
+        }
+
+        .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+
+        /* Pulsante per aprire e chiudere il menu */
+        .open-btn {
+            font-size: 30px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Quando il menu è aperto */
+        .sidebar.open {
+            left: 0;
+        }
+
+        /* Stili per il contenuto */
+        .content {
+            padding: 20px;
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            position: relative;
+            z-index: 1; /* Per farlo apparire sopra l'immagine */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menu laterale -->
+    <div class="sidebar" id="mySidebar">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+        <a href="#">Home</a>
+        <a href="Biomedico.html">Chi siamo</a>
+        <a href="#">Servizi</a>
+        <a href="#">Contatti</a>
+    </div>
+
+    <!-- Pulsante per aprire il menu -->
+    <span class="open-btn" onclick="openNav()">&#9776; Menu</span>
+
+    <!-- Immagine a schermo intero -->
+    <div class="full-image"></div>
+
+    <!-- Contenuto principale -->
+    <div class="content">
+        <h1>Benvenuto nel nostro sito!</h1>
+        <p>Qui trovi una bella immagine a schermo intero e un menu laterale interattivo.</p>
+    </div>
+
+    <script>
+        // Funzione per aprire il menu
+        function openNav() {
+            document.getElementById("mySidebar").classList.add("open");
+        }
+
+        // Funzione per chiudere il menu
+        function closeNav() {
+            document.getElementById("mySidebar").classList.remove("open");
+        }
+    </script>
+</body>
+</html>
